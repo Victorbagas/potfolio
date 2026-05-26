@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>António Victor Fernando — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050508;
+  --surface: #0c0c12;
+  --surface2: #13131c;
+  --border: rgba(100,120,255,0.12);
+  --border2: rgba(100,120,255,0.25);
+  --blue: #4f7cff;
+  --cyan: #00e5ff;
+  --gold: #f0b429;
+  --text: #eeeef4;
+  --muted: #6b6b82;
+  --dim: #3a3a50;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Instrument Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(79,124,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,124,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+.ambient { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+.ambient-1 { width: 600px; height: 600px; top: -200px; left: -200px; background: rgba(79,124,255,0.06); }
+.ambient-2 { width: 500px; height: 500px; bottom: -150px; right: -150px; background: rgba(0,229,255,0.05); }
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 3rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: rgba(5,5,8,0.85);
+  backdrop-filter: blur(20px);
+}
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-logo::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.2; } }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+
+/* transcender badge nav */
+.transcender-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 4px 12px;
+  border: 1px solid rgba(240,180,41,0.4);
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  background: rgba(240,180,41,0.07);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.transcender-pill::before {
+  content: '★';
+  font-size: 9px;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 3rem; position: relative; z-index: 1; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 64px;
+}
+.hero-left { padding: 4rem 0; }
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blue);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--blue); }
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+.hero-name .line1 { color: var(--text); display: block; }
+.hero-name .line2 { color: var(--blue); display: block; }
+.hero-name .line3 { color: var(--dim); display: block; }
+
+/* common core badge */
+.core-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+  padding: 6px 16px 6px 10px;
+  border: 1px solid rgba(240,180,41,0.35);
+  background: rgba(240,180,41,0.06);
+}
+.core-badge-icon {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+.core-badge-text { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; }
+.core-badge-text strong { color: var(--gold); display: block; font-weight: 400; }
+.core-badge-text span { color: var(--muted); }
+
+.hero-desc { font-size: 16px; color: var(--muted); line-height: 1.8; max-width: 440px; margin-bottom: 2.5rem; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 3rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  font-weight: 400;
+}
+.btn-primary { background: var(--blue); color: #fff; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+.btn-primary:hover { background: #6b8fff; }
+.btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border2); }
+.btn-ghost:hover { color: var(--text); border-color: var(--blue); }
+.hero-meta { font-family: var(--font-mono); font-size: 11px; color: var(--dim); display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+.hero-meta .dot { color: var(--blue); }
+
+.hero-right { display: flex; justify-content: center; align-items: center; }
+.profile-frame { position: relative; width: 360px; }
+.profile-frame::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--blue), transparent 60%, var(--cyan));
+  border-radius: 4px;
+  z-index: -1;
+}
+.profile-inner { background: var(--surface); border-radius: 3px; overflow: hidden; }
+.profile-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; filter: grayscale(20%) contrast(1.05); }
+.profile-badge {
+  position: absolute;
+  bottom: 24px; left: -24px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+.profile-corner { position: absolute; top: -1px; right: -1px; width: 40px; height: 40px; overflow: hidden; }
+.profile-corner::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  border-width: 40px 40px 0 0;
+  border-style: solid;
+  border-color: var(--cyan) transparent transparent transparent;
+}
+.profile-placeholder { width: 100%; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; background: var(--surface2); font-family: var(--font-display); font-size: 6rem; color: var(--border2); }
+
+/* SECTIONS */
+section { padding: 6rem 0; border-top: 1px solid var(--border); }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blue);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before { content: ''; width: 24px; height: 1px; background: var(--blue); }
+.section-label .num { color: var(--dim); margin-right: 4px; }
+.section-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: 3rem; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 2rem; }
+.stat-box { background: var(--bg); padding: 1.5rem; }
+.stat-num { font-family: var(--font-display); font-size: 2.5rem; color: var(--blue); line-height: 1; margin-bottom: 4px; }
+.stat-num.gold { color: var(--gold); }
+.stat-lbl { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.about-text p { color: var(--muted); font-size: 15px; line-height: 1.9; margin-bottom: 1.25rem; }
+
+/* SKILLS */
+.skills-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  transition: all 0.2s;
+  cursor: default;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+.skill-chip:hover { border-color: var(--blue); color: var(--blue); background: rgba(79,124,255,0.06); }
+.skill-chip.highlight { border-color: var(--blue); color: var(--blue); background: rgba(79,124,255,0.08); }
+.skill-chip.gold-chip { border-color: rgba(240,180,41,0.4); color: var(--gold); background: rgba(240,180,41,0.06); }
+
+/* PROJECTS */
+.projects-section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+.projects-count { font-family: var(--font-display); font-size: 4rem; color: var(--border2); line-height: 1; }
+
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.project-card { background: var(--bg); padding: 2rem; transition: background 0.2s; position: relative; overflow: hidden; }
+.project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: transparent; transition: background 0.3s; }
+.project-card:hover { background: var(--surface); }
+.project-card:hover::before { background: var(--blue); }
+.project-card.featured { border: 1px solid rgba(240,180,41,0.25); background: rgba(240,180,41,0.02); }
+.project-card.featured::before { background: var(--gold) !important; }
+.project-card.featured:hover { background: rgba(240,180,41,0.04); }
+
+.project-num { font-family: var(--font-display); font-size: 3.5rem; color: var(--border2); line-height: 1; margin-bottom: 1rem; transition: color 0.3s; }
+.project-card:hover .project-num { color: rgba(79,124,255,0.2); }
+.project-card.featured .project-num { color: rgba(240,180,41,0.2); }
+
+.project-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.label-bonus { color: var(--gold); border: 1px solid rgba(240,180,41,0.3); background: rgba(240,180,41,0.05); }
+.label-42 { color: var(--blue); border: 1px solid var(--border2); background: rgba(79,124,255,0.05); }
+
+.project-title { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.04em; margin-bottom: 0.75rem; color: var(--text); }
+.project-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; min-height: 72px; }
+.project-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.project-tag { font-family: var(--font-mono); font-size: 9px; padding: 3px 8px; border: 1px solid var(--border); color: var(--dim); letter-spacing: 0.06em; }
+.project-status { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; padding: 3px 10px; text-transform: uppercase; white-space: nowrap; }
+.status-done { color: #00e5a0; border: 1px solid rgba(0,229,160,0.25); background: rgba(0,229,160,0.05); }
+.status-wip { color: var(--blue); border: 1px solid var(--border2); background: rgba(79,124,255,0.05); }
+.status-bonus { color: var(--gold); border: 1px solid rgba(240,180,41,0.3); background: rgba(240,180,41,0.05); }
+
+/* CONTACT */
+.contact-block { border: 1px solid var(--border); padding: 4rem; position: relative; overflow: hidden; }
+.contact-block::after {
+  content: 'AVF';
+  position: absolute;
+  right: -20px; bottom: -40px;
+  font-family: var(--font-display);
+  font-size: 14rem;
+  color: var(--border);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.contact-item { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border: 1px solid var(--border); text-decoration: none; transition: all 0.2s; position: relative; z-index: 1; }
+.contact-item:hover { border-color: var(--blue); background: rgba(79,124,255,0.05); }
+.contact-icon { font-family: var(--font-display); font-size: 1.2rem; color: var(--blue); min-width: 28px; }
+.contact-label { font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
+.contact-val { font-size: 13px; color: var(--text); margin-top: 2px; }
+
+footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+.footer-logo { font-family: var(--font-display); font-size: 1.5rem; color: var(--dim); letter-spacing: 0.1em; }
+.footer-copy { font-family: var(--font-mono); font-size: 10px; color: var(--dim); letter-spacing: 0.06em; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+.fade-1 { animation: fadeUp 0.7s 0.1s both; }
+.fade-2 { animation: fadeUp 0.7s 0.2s both; }
+.fade-3 { animation: fadeUp 0.7s 0.35s both; }
+.fade-4 { animation: fadeUp 0.7s 0.5s both; }
+.fade-5 { animation: fadeUp 0.7s 0.65s both; }
+.fade-6 { animation: fadeUp 0.7s 0.8s both; }
+
+@media (max-width: 900px) {
+  nav { padding: 0 1.5rem; }
+  .container { padding: 0 1.5rem; }
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 96px; padding-bottom: 3rem; }
+  .hero-right { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .contact-block { padding: 2rem; }
+  .contact-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  .transcender-pill { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="ambient ambient-1"></div>
+<div class="ambient ambient-2"></div>
+
+<nav>
+  <div class="nav-logo">AVF.dev</div>
+  <ul class="nav-links">
+    <li><a href="#sobre">sobre</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projetos">projetos</a></li>
+    <li><a href="#contacto">contacto</a></li>
+  </ul>
+  <div class="transcender-pill">42 Transcender</div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none; padding:0;">
+    <div class="hero-left">
+      <div class="hero-eyebrow fade-1">Software Developer &nbsp;·&nbsp; 42 Luanda</div>
+      <h1 class="hero-name fade-2">
+        <span class="line1">ANTÓNIO</span>
+        <span class="line2">VICTOR</span>
+        <span class="line3">FERNANDO</span>
+      </h1>
+      <div class="core-badge fade-3">
+        <span class="core-badge-icon">★</span>
+        <div class="core-badge-text">
+          <strong>42 Transcender</strong>
+          <span>Common Core concluído</span>
+        </div>
+      </div>
+      <p class="hero-desc fade-3">
+        Desenvolvedor focado em sistemas, algoritmos, redes e DevOps.
+        Apaixonado por programação de baixo nível, Linux e resolução de problemas complexos.
+      </p>
+      <div class="hero-cta fade-4">
+        <a href="https://github.com/Victorbagas" target="_blank" class="btn btn-primary">↗ GitHub</a>
+        <a href="mailto:antoniovictorantonfer@gmail.com" class="btn btn-ghost">Contactar</a>
+      </div>
+      <div class="hero-meta fade-5">
+        <span>Luanda, Angola</span>
+        <span class="dot">·</span>
+        <span>Backend Developer</span>
+        <span class="dot">·</span>
+        <span>42 Transcender</span>
+      </div>
+    </div>
+    <div class="hero-right fade-6">
+      <div class="profile-frame">
+        <div class="profile-corner"></div>
+        <div class="profile-inner">
+          <img src="1763720873775.jpg" alt="António Victor Fernando" class="profile-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="profile-placeholder" style="display:none;">AVF</div>
+        </div>
+        <div class="profile-badge">★ 42 Transcender</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="sobre">
+    <div class="about-grid">
+      <div>
+        <div class="section-label"><span class="num">01</span>Sobre mim</div>
+        <h2 class="section-title">Construindo com performance e impacto.</h2>
+        <div class="about-stats">
+          <div class="stat-box"><div class="stat-num">12+</div><div class="stat-lbl">Projetos concluídos</div></div>
+          <div class="stat-box"><div class="stat-num gold">★</div><div class="stat-lbl">42 Transcender</div></div>
+          <div class="stat-box"><div class="stat-num">C/C++</div><div class="stat-lbl">Stack principal</div></div>
+          <div class="stat-box"><div class="stat-num">100%</div><div class="stat-lbl">Common Core</div></div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>Sou estudante da 42 Luanda, tendo concluído o <strong style="color:var(--gold);font-weight:400;">Common Core</strong> e alcançado o nível de <strong style="color:var(--gold);font-weight:400;">Transcender</strong> — o mais alto da formação base.</p>
+        <p>Tenho experiência com projectos avançados em C, C++, Docker, Linux e algoritmos, desenvolvendo aplicações focadas em performance, arquitectura e resolução de problemas reais.</p>
+        <p>Actualmente aprofundo competências em sistemas distribuídos, networking, DevOps, análise de dados com Power BI e engenharia de software moderna.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label"><span class="num">02</span>Stack tecnológico</div>
+    <h2 class="section-title">Tech Stack</h2>
+    <div class="skills-wrap">
+      <span class="skill-chip highlight">C</span>
+      <span class="skill-chip highlight">C++</span>
+      <span class="skill-chip">Python</span>
+      <span class="skill-chip">JavaScript</span>
+      <span class="skill-chip highlight">Linux</span>
+      <span class="skill-chip highlight">Docker</span>
+      <span class="skill-chip">Docker Compose</span>
+      <span class="skill-chip">Git &amp; GitHub</span>
+      <span class="skill-chip highlight">Algorithms</span>
+      <span class="skill-chip">Data Structures</span>
+      <span class="skill-chip">Threads &amp; Mutex</span>
+      <span class="skill-chip">DevOps</span>
+      <span class="skill-chip">Networking</span>
+      <span class="skill-chip">Sockets</span>
+      <span class="skill-chip">Backend</span>
+      <span class="skill-chip gold-chip">Power BI</span>
+      <span class="skill-chip">Data Analysis</span>
+      <span class="skill-chip">Problem Solving</span>
+      <span class="skill-chip">Shell Scripting</span>
+      <span class="skill-chip">SQL</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projetos">
+    <div class="projects-section-header">
+      <div>
+        <div class="section-label"><span class="num">03</span>Portfolio</div>
+        <h2 class="section-title" style="margin-bottom:0;">Projetos</h2>
+      </div>
+      <div class="projects-count">12</div>
+    </div>
+    <div class="projects-grid">
+
+      <!-- 42 COMMON CORE -->
+      <div class="project-card">
+        <div class="project-num">01</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">Libft</div>
+        <p class="project-desc">Reimplementação completa da biblioteca padrão C — strings, memória, listas ligadas e funções utilitárias escritas de raiz.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">libc</span><span class="project-tag">linked list</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">02</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">ft_printf</div>
+        <p class="project-desc">Recriação do printf com suporte a múltiplas conversões usando argumentos variádicos — formatação de strings, inteiros e ponteiros.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">variadic</span><span class="project-tag">I/O</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">03</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">get_next_line</div>
+        <p class="project-desc">Leitura eficiente linha a linha de ficheiros com gestão de buffer estático e múltiplos descritores em simultâneo.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">buffer</span><span class="project-tag">fd</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">04</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">Born2beroot</div>
+        <p class="project-desc">Configuração de servidor Linux virtualizado com políticas de segurança, sudo, SSH, firewall UFW e monitorização automática.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">Linux</span><span class="project-tag">VM</span><span class="project-tag">sysadmin</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">05</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">Push Swap</div>
+        <p class="project-desc">Ordenação com dois stacks e número mínimo de operações — implementação de algoritmo turco e análise de complexidade O(n log n).</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">Algoritmos</span><span class="project-tag">O(n log n)</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">06</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">Minitalk</div>
+        <p class="project-desc">Sistema de comunicação entre processos via sinais UNIX — protocolo bit-a-bit com SIGUSR1/SIGUSR2 e confirmação de recepção.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">UNIX Signals</span><span class="project-tag">IPC</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">07</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">so_long / fdf</div>
+        <p class="project-desc">Projecto gráfico com renderização 2D/3D usando MiniLibX, gestão de eventos de teclado e mapa em wireframe isométrico.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">MLX</span><span class="project-tag">gráficos</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">08</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">Philosophers</div>
+        <p class="project-desc">Problema clássico dos filósofos — concorrência com threads POSIX, sincronização com mutexes e prevenção de deadlocks.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">Threads</span><span class="project-tag">Mutex</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">09</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">Minishell</div>
+        <p class="project-desc">Shell Unix funcional com parsing de comandos, pipes, redireções, variáveis de ambiente, heredoc e builtins implementados de raiz.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">Unix</span><span class="project-tag">processos</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">10</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">Inception</div>
+        <p class="project-desc">Infraestrutura com Docker Compose — NGINX, WordPress e MariaDB em rede privada, com TLS e volumes persistentes.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">Docker</span><span class="project-tag">DevOps</span><span class="project-tag">Linux</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">11</div>
+        <div class="project-label label-42">42 Core</div>
+        <div class="project-title">IRC Server</div>
+        <p class="project-desc">Servidor IRC em C++ com sockets TCP não bloqueantes — canais, modos de utilizador, operadores e comandos RFC 1459.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Sockets</span><span class="project-tag">RFC</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+      <!-- BONUS PROJECT -->
+      <div class="project-card featured">
+        <div class="project-num">12</div>
+        <div class="project-label label-bonus">★ Projecto Extra</div>
+        <div class="project-title">NetPulse</div>
+        <p class="project-desc">Dashboard de monitorização de rede em tempo real — captura de pacotes com libpcap, análise de tráfego e visualização via terminal TUI em C++.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">libpcap</span><span class="project-tag">networking</span><span class="project-tag">TUI</span></div>
+          <span class="project-status status-bonus">★ Pessoal</span>
+        </div>
+      </div>
+
+      <!-- BONUS: Mapazzz -->
+      <div class="project-card">
+        <div class="project-num">13</div>
+        <div class="project-label label-bonus">★ Projecto Extra</div>
+        <div class="project-title">Mapazzz</div>
+        <p class="project-desc">Aplicação de análise e prevenção do risco de malária em Angola — investigação de campo, testes de usabilidade e documentação técnica completa.</p>
+        <div class="project-footer">
+          <div class="project-tags"><span class="project-tag">Research</span><span class="project-tag">UX</span><span class="project-tag">Power BI</span></div>
+          <span class="project-status status-done">Concluído</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacto">
+    <div class="section-label"><span class="num">04</span>Contacto</div>
+    <div class="contact-block">
+      <h2 class="section-title" style="margin-bottom:0.5rem;">Vamos construir<br>algo incrível.</h2>
+      <p style="color:var(--muted);font-size:15px;max-width:480px;margin-bottom:0;">Disponível para oportunidades profissionais, colaboração em projectos e desafios de engenharia de software.</p>
+      <div class="contact-grid">
+        <a href="mailto:antoniovictorantonfer@gmail.com" class="contact-item">
+          <span class="contact-icon">@</span>
+          <div><div class="contact-label">Email</div><div class="contact-val">antoniovictorantonfer@gmail.com</div></div>
+        </a>
+        <a href="https://github.com/Victorbagas" target="_blank" class="contact-item">
+          <span class="contact-icon">GH</span>
+          <div><div class="contact-label">GitHub</div><div class="contact-val">github.com/Victorbagas</div></div>
+        </a>
+        <div class="contact-item">
+          <span class="contact-icon">☎</span>
+          <div><div class="contact-label">Telemóvel</div><div class="contact-val">+244 927 238 974</div></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">42</span>
+          <div><div class="contact-label">Campus — Nível</div><div class="contact-val">42 Luanda · Transcender ★</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-logo">AVF</div>
+  <div class="footer-copy">© 2025 · António Victor Fernando · 42 Luanda · Transcender</div>
+</footer>
+
+</body>
+</html>
