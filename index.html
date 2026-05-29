@@ -374,162 +374,311 @@ footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex;
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projetos">
-    <div class="projects-section-header">
-      <div>
-        <div class="section-label"><span class="num">04</span>Portfolio</div>
-        <h2 class="section-title" style="margin-bottom:0;">Projetos</h2>
-      </div>
-      <div class="projects-count">13</div>
+<!-- PROJECTS -->
+<section id="projetos">
+  <div class="projects-section-header">
+    <div>
+      <div class="section-label"><span class="num">04</span>Portfolio</div>
+      <h2 class="section-title" style="margin-bottom:0;">Projetos</h2>
     </div>
-    <div class="projects-grid">
+    <div class="projects-count">16</div>
+  </div>
 
-      <div class="project-card">
-        <div class="project-num">01</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">Libft</div>
-        <p class="project-desc">40+ funções da biblioteca padrão C reimplementadas do zero — strings, memória, listas ligadas. Zero fugas de memória com Valgrind.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">libc</span><span class="project-tag">Valgrind</span></div>
-          <span class="project-status status-done">Concluído</span>
+  <div class="projects-grid">
+
+    <!-- LIBFT -->
+    <div class="project-card">
+      <div class="project-num">01</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">Libft</div>
+      <p class="project-desc">
+        Biblioteca personalizada em C com reimplementação de funções da libc, gestão de memória e listas ligadas.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">C</span>
+          <span class="project-tag">Libc</span>
+          <span class="project-tag">Valgrind</span>
         </div>
+        <span class="project-status status-done">Concluído</span>
       </div>
-
-      <div class="project-card">
-        <div class="project-num">02</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">ft_printf</div>
-        <p class="project-desc">Reimplementação do printf() com múltiplos especificadores de formato usando argumentos variádicos e tratamento rigoroso de edge cases.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">variadic</span><span class="project-tag">I/O</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">03</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">get_next_line</div>
-        <p class="project-desc">Leitura linha a linha de qualquer descritor de ficheiro com buffer configurável e suporte a múltiplos fd em simultâneo.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">buffer</span><span class="project-tag">fd</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">04</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">Born2beroot</div>
-        <p class="project-desc">Servidor Linux virtualizado com sudo, SSH, UFW, políticas de password e script de monitorização automática a cada 10 minutos.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">Linux</span><span class="project-tag">VM</span><span class="project-tag">sysadmin</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">05</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">Push Swap</div>
-        <p class="project-desc">Ordenação com dois stacks minimizando operações — algoritmo turco com análise de complexidade O(n log n).</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">Algoritmos</span><span class="project-tag">O(n log n)</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">06</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">Minitalk</div>
-        <p class="project-desc">IPC binário entre processos via SIGUSR1/SIGUSR2 — protocolo bit-a-bit com confirmação de recepção e controlo de fluxo.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">UNIX Signals</span><span class="project-tag">IPC</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">07</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">Philosophers</div>
-        <p class="project-desc">Problema dos filósofos — threads POSIX, mutexes, prevenção de deadlocks e condições de corrida em ambiente multi-thread.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">Threads</span><span class="project-tag">Mutex</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">08</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">miniRT</div>
-        <p class="project-desc">Ray tracer em C — matemática vectorial, cálculo de luz, sombra e reflexo. Renderização de cenas 3D a partir de ficheiros de configuração.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">3D</span><span class="project-tag">Ray tracing</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">09</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">Minishell</div>
-        <p class="project-desc">Shell Unix completo — parsing de comandos, pipes, redireções, heredoc, variáveis de ambiente e builtins implementados de raiz.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C</span><span class="project-tag">Unix</span><span class="project-tag">processos</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">10</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">Inception</div>
-        <p class="project-desc">Infraestrutura Docker Compose — NGINX, WordPress e MariaDB em rede privada isolada com TLS e volumes persistentes.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">Docker</span><span class="project-tag">DevOps</span><span class="project-tag">Linux</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">11</div>
-        <div class="project-label label-42">42 Core</div>
-        <div class="project-title">IRC Server</div>
-        <p class="project-desc">Servidor IRC em C++ com sockets TCP não bloqueantes — canais, modos de utilizador, operadores e comandos RFC 1459.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Sockets</span><span class="project-tag">RFC 1459</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
-      <div class="project-card featured">
-        <div class="project-num">12</div>
-        <div class="project-label label-bonus">★ Pessoal</div>
-        <div class="project-title">NetPulse</div>
-        <p class="project-desc">Monitor de rede em tempo real em C++ — raw sockets AF_PACKET, análise de protocolos TCP/UDP, top IPs e dashboard TUI com ANSI.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">raw sockets</span><span class="project-tag">TUI</span></div>
-          <span class="project-status status-bonus">★ Pessoal</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">13</div>
-        <div class="project-label label-data">Data & BI</div>
-        <div class="project-title">Mapazzz</div>
-        <p class="project-desc">Análise e prevenção do risco de malária em Angola — investigação de campo, testes de usabilidade, dashboards Power BI e documentação técnica.</p>
-        <div class="project-footer">
-          <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">Research</span><span class="project-tag">UX</span></div>
-          <span class="project-status status-done">Concluído</span>
-        </div>
-      </div>
-
+      <a href="https://github.com/Victorbagas" target="_blank" class="btn btn-ghost" style="margin-top:1rem;">
+        Ver Projeto
+      </a>
     </div>
-  </section>
+
+    <!-- FT_PRINTF -->
+    <div class="project-card">
+      <div class="project-num">02</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">ft_printf</div>
+      <p class="project-desc">
+        Reimplementação do printf() com parsing de formatos e argumentos variádicos.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">C</span>
+          <span class="project-tag">Variadic</span>
+          <span class="project-tag">I/O</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- GNL -->
+    <div class="project-card">
+      <div class="project-num">03</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">get_next_line</div>
+      <p class="project-desc">
+        Leitura eficiente linha por linha em ficheiros utilizando buffers dinâmicos.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">C</span>
+          <span class="project-tag">Buffer</span>
+          <span class="project-tag">FD</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- BORN2BEROOT -->
+    <div class="project-card">
+      <div class="project-num">04</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">Born2beroot</div>
+      <p class="project-desc">
+        Configuração completa de servidor Linux com SSH, UFW, sudo e monitoramento automático.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Linux</span>
+          <span class="project-tag">VM</span>
+          <span class="project-tag">Sysadmin</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- PUSH_SWAP -->
+    <div class="project-card">
+      <div class="project-num">05</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">Push Swap</div>
+      <p class="project-desc">
+        Algoritmo avançado de ordenação usando duas pilhas e minimização de operações.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Algorithms</span>
+          <span class="project-tag">Stacks</span>
+          <span class="project-tag">C</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- MINITALK -->
+    <div class="project-card">
+      <div class="project-num">06</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">Minitalk</div>
+      <p class="project-desc">
+        Comunicação entre processos usando sinais UNIX bit-a-bit com confirmação de entrega.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">IPC</span>
+          <span class="project-tag">Signals</span>
+          <span class="project-tag">UNIX</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- PHILOSOPHERS -->
+    <div class="project-card">
+      <div class="project-num">07</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">Philosophers</div>
+      <p class="project-desc">
+        Concorrência e sincronização com threads POSIX e mutexes para evitar deadlocks.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Threads</span>
+          <span class="project-tag">Mutex</span>
+          <span class="project-tag">C</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- MINI RT -->
+    <div class="project-card">
+      <div class="project-num">08</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">miniRT</div>
+      <p class="project-desc">
+        Motor gráfico Ray Tracing em C com iluminação, sombras e renderização 3D.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">3D</span>
+          <span class="project-tag">Graphics</span>
+          <span class="project-tag">Math</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- MINISHELL -->
+    <div class="project-card">
+      <div class="project-num">09</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">Minishell</div>
+      <p class="project-desc">
+        Shell UNIX completo com pipes, redireções, heredoc e execução de processos.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Shell</span>
+          <span class="project-tag">Unix</span>
+          <span class="project-tag">Processes</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- INCEPTION -->
+    <div class="project-card">
+      <div class="project-num">10</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">Inception</div>
+      <p class="project-desc">
+        Infraestrutura Docker Compose com NGINX, WordPress, MariaDB e TLS.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Docker</span>
+          <span class="project-tag">DevOps</span>
+          <span class="project-tag">Linux</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- IRC -->
+    <div class="project-card">
+      <div class="project-num">11</div>
+      <div class="project-label label-42">42 Core</div>
+      <div class="project-title">IRC Server</div>
+      <p class="project-desc">
+        Servidor IRC em C++ usando sockets TCP não bloqueantes e múltiplos clientes.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">C++</span>
+          <span class="project-tag">Sockets</span>
+          <span class="project-tag">TCP/IP</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- NETPULSE -->
+    <div class="project-card featured">
+      <div class="project-num">12</div>
+      <div class="project-label label-bonus">★ Networking</div>
+      <div class="project-title">NetPulse</div>
+      <p class="project-desc">
+        Analisador de rede em tempo real em C++ com captura de pacotes e dashboard TUI.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">C++</span>
+          <span class="project-tag">libpcap</span>
+          <span class="project-tag">TUI</span>
+        </div>
+        <span class="project-status status-bonus">★ Destaque</span>
+      </div>
+    </div>
+
+    <!-- MAPAZZZ -->
+    <div class="project-card">
+      <div class="project-num">13</div>
+      <div class="project-label label-data">Data & BI</div>
+      <div class="project-title">Mapazzz</div>
+      <p class="project-desc">
+        Plataforma de análise e prevenção da malária usando Power BI, pesquisa e dados.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Power BI</span>
+          <span class="project-tag">Research</span>
+          <span class="project-tag">UX</span>
+        </div>
+        <span class="project-status status-done">Concluído</span>
+      </div>
+    </div>
+
+    <!-- SENTINEL -->
+    <div class="project-card featured">
+      <div class="project-num">14</div>
+      <div class="project-label label-bonus">★ Backend</div>
+      <div class="project-title">Sentinel</div>
+      <p class="project-desc">
+        Plataforma moderna de monitoramento de infraestrutura e detecção de ameaças em tempo real.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">Docker</span>
+          <span class="project-tag">PostgreSQL</span>
+        </div>
+        <span class="project-status status-bonus">★ Infra</span>
+      </div>
+    </div>
+
+    <!-- DOCKWATCH -->
+    <div class="project-card">
+      <div class="project-num">15</div>
+      <div class="project-label label-bonus">★ DevOps</div>
+      <div class="project-title">DockWatch</div>
+      <p class="project-desc">
+        Plataforma de monitoramento Docker com métricas, logs e analytics de containers.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">Docker</span>
+          <span class="project-tag">Redis</span>
+          <span class="project-tag">Linux</span>
+        </div>
+        <span class="project-status status-bonus">★ Monitoring</span>
+      </div>
+    </div>
+
+    <!-- NETPULSE API -->
+    <div class="project-card featured">
+      <div class="project-num">16</div>
+      <div class="project-label label-bonus">★ Real-Time</div>
+      <div class="project-title">NetPulseAPI</div>
+      <p class="project-desc">
+        Backend de análise de tráfego TCP/IP com métricas em tempo real via WebSockets.
+      </p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">Sockets</span>
+          <span class="project-tag">WebSockets</span>
+        </div>
+        <span class="project-status status-bonus">★ Backend</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contacto">
