@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>António Victor Fernando — Desenvolvedor de Software | Data Engineering | 42 Luanda</title>
-<meta name="description" content="Desenvolvedor de Software especializado em C/C++ e sistemas Linux. 42 Luanda Transcender. Disponível para trabalho imediato.">
+<title>António Victor Fernando — Analista de Dados | Data Engineering | 42 Luanda</title>
+<meta name="description" content="Analista de Dados especializado em SQL, Python e Power BI. 42 Luanda Transcender. Disponível para trabalho imediato.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -18,6 +18,7 @@
   --cyan: #00e5ff;
   --gold: #f0b429;
   --green: #00e5a0;
+  --purple: #a78bfa;
   --text: #eeeef4;
   --muted: #6b6b82;
   --dim: #3a3a50;
@@ -37,7 +38,7 @@ body::before {
 }
 .ambient { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
 .ambient-1 { width: 600px; height: 600px; top: -200px; left: -200px; background: rgba(79,124,255,0.06); }
-.ambient-2 { width: 500px; height: 500px; bottom: -150px; right: -150px; background: rgba(0,229,255,0.05); }
+.ambient-2 { width: 500px; height: 500px; bottom: -150px; right: -150px; background: rgba(167,139,250,0.06); }
 
 /* ── AVAILABLE BANNER ── */
 .available-banner {
@@ -89,8 +90,8 @@ nav {
 .core-badge-text { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; }
 .core-badge-text strong { color: var(--gold); display: block; font-weight: 400; }
 .core-badge-text span { color: var(--muted); }
-.hero-value { font-size: 17px; color: var(--text); line-height: 1.6; max-width: 440px; margin-bottom: 0.75rem; font-weight: 500; }
-.hero-desc { font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 440px; margin-bottom: 2.5rem; }
+.hero-value { font-size: 17px; color: var(--text); line-height: 1.6; max-width: 460px; margin-bottom: 0.75rem; font-weight: 500; }
+.hero-desc { font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 460px; margin-bottom: 2.5rem; }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 3rem; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; font-weight: 400; }
 .btn-primary { background: var(--blue); color: #fff; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
@@ -104,7 +105,7 @@ nav {
 
 .hero-right { display: flex; justify-content: center; align-items: center; }
 .profile-frame { position: relative; width: 360px; }
-.profile-frame::before { content: ''; position: absolute; inset: -1px; background: linear-gradient(135deg, var(--blue), transparent 60%, var(--cyan)); border-radius: 4px; z-index: -1; }
+.profile-frame::before { content: ''; position: absolute; inset: -1px; background: linear-gradient(135deg, var(--blue), transparent 60%, var(--purple)); border-radius: 4px; z-index: -1; }
 .profile-inner { background: var(--surface); border-radius: 3px; overflow: hidden; }
 .profile-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; filter: grayscale(20%) contrast(1.05); }
 .profile-badge { position: absolute; bottom: 24px; left: -24px; background: var(--surface2); border: 1px solid rgba(0,229,160,0.4); padding: 12px 16px; font-family: var(--font-mono); font-size: 10px; color: var(--green); letter-spacing: 0.1em; display: flex; align-items: center; gap: 8px; }
@@ -118,7 +119,10 @@ section { padding: 6rem 0; border-top: 1px solid var(--border); }
 .section-label { font-family: var(--font-mono); font-size: 11px; color: var(--blue); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 12px; }
 .section-label::before { content: ''; width: 24px; height: 1px; background: var(--blue); }
 .section-label .num { color: var(--dim); margin-right: 4px; }
+.section-label.purple { color: var(--purple); }
+.section-label.purple::before { background: var(--purple); }
 .section-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: 3rem; }
+.section-sub { font-size: 14px; color: var(--muted); max-width: 560px; margin-top: -2rem; margin-bottom: 3rem; line-height: 1.7; }
 
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
@@ -126,14 +130,17 @@ section { padding: 6rem 0; border-top: 1px solid var(--border); }
 .stat-box { background: var(--bg); padding: 1.5rem; }
 .stat-num { font-family: var(--font-display); font-size: 2.5rem; color: var(--blue); line-height: 1; margin-bottom: 4px; }
 .stat-num.gold { color: var(--gold); }
+.stat-num.purple { color: var(--purple); }
 .stat-lbl { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
 .about-text p { color: var(--muted); font-size: 15px; line-height: 1.9; margin-bottom: 1.25rem; }
 
 /* SKILLS */
+.skills-group { margin-bottom: 2rem; }
+.skills-group-label { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
 .skills-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-chip { font-family: var(--font-mono); font-size: 11px; padding: 6px 14px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.06em; transition: all 0.2s; cursor: default; clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px)); }
 .skill-chip:hover { border-color: var(--blue); color: var(--blue); background: rgba(79,124,255,0.06); }
-.skill-chip.highlight { border-color: var(--blue); color: var(--blue); background: rgba(79,124,255,0.08); }
+.skill-chip.highlight { border-color: var(--purple); color: var(--purple); background: rgba(167,139,250,0.08); }
 .skill-chip.gold-chip { border-color: rgba(240,180,41,0.4); color: var(--gold); background: rgba(240,180,41,0.06); }
 
 /* EXPERIENCE TIMELINE */
@@ -143,13 +150,14 @@ section { padding: 6rem 0; border-top: 1px solid var(--border); }
 .timeline-date { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-align: right; padding-top: 4px; letter-spacing: 0.05em; line-height: 1.6; }
 .timeline-dot { position: absolute; left: 122px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--blue); border: 2px solid var(--bg); z-index: 2; }
 .timeline-dot.gold { background: var(--gold); }
+.timeline-dot.purple { background: var(--purple); }
 .timeline-content { padding-left: 1rem; }
 .timeline-title { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
 .timeline-sub { font-family: var(--font-mono); font-size: 11px; color: var(--blue); letter-spacing: 0.06em; margin-bottom: 8px; }
 .timeline-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
 /* PROJECTS */
-.projects-section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+.projects-section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
 .projects-count { font-family: var(--font-display); font-size: 4rem; color: var(--border2); line-height: 1; }
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
 .project-card { background: var(--bg); padding: 2rem; transition: background 0.2s; position: relative; overflow: hidden; }
@@ -158,13 +166,16 @@ section { padding: 6rem 0; border-top: 1px solid var(--border); }
 .project-card:hover::before { background: var(--blue); }
 .project-card.featured { border: 1px solid rgba(240,180,41,0.2); background: rgba(240,180,41,0.015); }
 .project-card.featured::before { background: var(--gold) !important; }
+.project-card.data-card { border: 1px solid rgba(167,139,250,0.2); background: rgba(167,139,250,0.015); }
+.project-card.data-card::before { background: var(--purple) !important; }
 .project-num { font-family: var(--font-display); font-size: 3.5rem; color: var(--border2); line-height: 1; margin-bottom: 1rem; transition: color 0.3s; }
 .project-card:hover .project-num { color: rgba(79,124,255,0.2); }
 .project-card.featured .project-num { color: rgba(240,180,41,0.2); }
+.project-card.data-card .project-num { color: rgba(167,139,250,0.2); }
 .project-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; margin-bottom: 8px; display: inline-block; }
 .label-bonus { color: var(--gold); border: 1px solid rgba(240,180,41,0.3); background: rgba(240,180,41,0.05); }
 .label-42 { color: var(--blue); border: 1px solid var(--border2); background: rgba(79,124,255,0.05); }
-.label-data { color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); background: rgba(167,139,250,0.05); }
+.label-data { color: var(--purple); border: 1px solid rgba(167,139,250,0.3); background: rgba(167,139,250,0.05); }
 .project-title { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.04em; margin-bottom: 0.75rem; color: var(--text); }
 .project-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; min-height: 72px; }
 .project-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
@@ -173,6 +184,9 @@ section { padding: 6rem 0; border-top: 1px solid var(--border); }
 .project-status { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; padding: 3px 10px; text-transform: uppercase; white-space: nowrap; }
 .status-done { color: var(--green); border: 1px solid rgba(0,229,160,0.25); background: rgba(0,229,160,0.05); }
 .status-bonus { color: var(--gold); border: 1px solid rgba(240,180,41,0.3); background: rgba(240,180,41,0.05); }
+.status-progress { color: var(--purple); border: 1px solid rgba(167,139,250,0.3); background: rgba(167,139,250,0.05); }
+
+.software-toggle-note { font-size: 13px; color: var(--muted); margin-bottom: 2rem; max-width: 620px; line-height: 1.7; }
 
 /* CONTACT */
 .contact-block { border: 1px solid var(--border); padding: 4rem; position: relative; overflow: hidden; }
@@ -227,7 +241,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex;
 
 <div class="available-banner">
   <span class="dot"></span>
-  Disponível para oportunidades imediatas — <a href="mailto:antoniovictorantonfer@gmail.com">antoniovictorantonfer@gmail.com</a>
+  Disponível para oportunidades imediatas em Data Analytics / Data Engineering — <a href="mailto:antoniovictorantonfer@gmail.com">antoniovictorantonfer@gmail.com</a>
 </div>
 
 <nav>
@@ -236,7 +250,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex;
     <li><a href="#sobre">sobre</a></li>
     <li><a href="#experiencia">experiência</a></li>
     <li><a href="#skills">skills</a></li>
-    <li><a href="#projetos">projetos</a></li>
+    <li><a href="#dados">projetos</a></li>
     <li><a href="#contacto">contacto</a></li>
   </ul>
   <div class="transcender-pill">42 Transcender</div>
@@ -247,7 +261,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex;
   <!-- HERO -->
   <section class="hero" style="border-top:none; padding-bottom:2rem;">
     <div class="hero-left">
-      <div class="hero-eyebrow fade-1">Software Developer &nbsp;·&nbsp; 42 Luanda</div>
+      <div class="hero-eyebrow fade-1">Analista de Dados &nbsp;·&nbsp; 42 Luanda</div>
       <h1 class="hero-name fade-2">
         <span class="line1">ANTÓNIO</span>
         <span class="line2">VICTOR</span>
@@ -260,17 +274,17 @@ footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex;
           <span>Common Core concluído</span>
         </div>
       </div>
-      <p class="hero-value fade-3">Desenvolvedor de Software | Data Engineering  —<br>disponível para trabalho imediato.</p>
-      <p class="hero-desc fade-3">Apaixonado por programação e na criação de software modernos, algoritmos e resolução de problemas complexos. Experiência em DevOps, redes, análise de dados com Power BI, SQL e automação com Python.</p>
+      <p class="hero-value fade-3">Analista de Dados — disponível para trabalho imediato.</p>
+      <p class="hero-desc fade-3">Uso SQL, Python e Power BI para transformar dados brutos em decisões: queries analíticas, EDA, modelação de dados e dashboards executivos.</p>
       <div class="hero-cta fade-4">
-        <a href="https://github.com/Victorbagas" target="_blank" class="btn btn-primary">↗ GitHub</a>
+        <a href="#dados" class="btn btn-primary">↗ Projetos de Dados</a>
         <a href="mailto:antoniovictorantonfer@gmail.com" class="btn btn-green">✉ Contactar</a>
-        <a href="#contacto" class="btn btn-ghost">Ver portfólio</a>
+        <a href="https://github.com/Victorbagas" target="_blank" class="btn btn-ghost">GitHub</a>
       </div>
       <div class="hero-meta fade-5">
         <span>Luanda, Angola</span>
         <span class="dot">·</span>
-        <span>Backend · Systems · DevOps</span>
+        <span>SQL · Python · Power BI</span>
         <span class="dot">·</span>
         <span>PT / EN B1</span>
       </div>
@@ -293,18 +307,18 @@ footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex;
     <div class="about-grid">
       <div>
         <div class="section-label"><span class="num">01</span>Sobre mim</div>
-        <h2 class="section-title">Construindo com performance e impacto.</h2>
+        <h2 class="section-title">Dados com rigor técnico.</h2>
         <div class="about-stats">
-          <div class="stat-box"><div class="stat-num">13+</div><div class="stat-lbl">Projetos concluídos</div></div>
+          <div class="stat-box"><div class="stat-num purple">6</div><div class="stat-lbl">Projetos de dados</div></div>
           <div class="stat-box"><div class="stat-num gold">★</div><div class="stat-lbl">42 Transcender</div></div>
-          <div class="stat-box"><div class="stat-num">C/C++</div><div class="stat-lbl">Stack principal</div></div>
+          <div class="stat-box"><div class="stat-num">SQL</div><div class="stat-lbl">Ferramenta principal</div></div>
           <div class="stat-box"><div class="stat-num">100%</div><div class="stat-lbl">Common Core</div></div>
         </div>
       </div>
       <div class="about-text">
-        <p>Sou developer backend formado pela <strong style="color:var(--gold);font-weight:400;">42 Luanda</strong>, tendo concluído o Common Core e alcançado o nível <strong style="color:var(--gold);font-weight:400;">Transcender</strong> — o mais alto da formação base.</p>
-        <p>Especializado em C/C++, sistemas Unix, algoritmos e DevOps. Tenho também experiência em automação de dados com Python, Power BI e Excel — o que me permite actuar tanto na camada de sistemas como na de dados.</p>
-        <p>Metodologia peer-to-peer da 42: 100% prático, sem professores, aprendizagem por projectos reais. O resultado é a capacidade de entrar num novo problema e resolvê-lo de forma independente.</p>
+        <p>Analista de Dados com foco em <strong style="color:var(--purple);font-weight:400;">SQL, Python e Power BI</strong>, transformando dados operacionais em relatórios e decisões de negócio.</p>
+        <p>Formado pela <strong style="color:var(--gold);font-weight:400;">42 Luanda</strong>, com nível Transcender no Common Core — o que dá uma base sólida em lógica, algoritmos e resolução estruturada de problemas, aplicada agora à análise de dados.</p>
+        <p>Portefólio com projectos ponta-a-ponta: SQL analítico (window functions, RFM, cohort analysis), EDA em Python e dashboards em Power BI, cobrindo domínios como e-commerce, finanças, clientes, logística, saúde e BI executivo.</p>
       </div>
     </div>
   </section>
@@ -315,21 +329,21 @@ footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex;
     <h2 class="section-title">Percurso</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-date">2024<br>Presente</div>
-        <div class="timeline-dot gold"></div>
+        <div class="timeline-date">2026<br>Presente</div>
+        <div class="timeline-dot purple"></div>
         <div class="timeline-content">
-          <div class="timeline-title">42 Luanda — Software Engineering</div>
-          <div class="timeline-sub">★ Transcender · Common Core 100%</div>
-          <div class="timeline-desc">Engenharia de software por aprendizagem baseada em projectos. Metodologia peer-to-peer sem professores — avaliação 100% técnica por pares. Projectos em C, C++, Linux, Docker, redes e algoritmos. Nível Transcender alcançado após conclusão de todo o currículo base.</div>
+          <div class="timeline-title">Análise de Dados & BI</div>
+          <div class="timeline-sub">SQL · Python · Power BI</div>
+          <div class="timeline-desc">Portefólio de projectos de dados ponta-a-ponta: SQL analítico, EDA em Python e dashboards em Power BI, cobrindo e-commerce, financeiro, clientes, logística, saúde e BI executivo.</div>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-date">Em curso</div>
-        <div class="timeline-dot"></div>
+        <div class="timeline-date">2024<br>Presente</div>
+        <div class="timeline-dot gold"></div>
         <div class="timeline-content">
-          <div class="timeline-title">Análise de Dados & BI</div>
-          <div class="timeline-sub">Power BI · Python · SQL · Excel</div>
-          <div class="timeline-desc">Scripts de automação em Python e Bash para tarefas administrativas. Queries SQL para extracção e transformação de dados. Criação de dashboards operacionais em Power BI e relatórios em Excel.</div>
+          <div class="timeline-title">42 Luanda</div>
+          <div class="timeline-sub">★ Transcender · Common Core 100%</div>
+          <div class="timeline-desc">Formação intensiva em algoritmos, lógica e resolução estruturada de problemas — metodologia 100% prática, peer-to-peer. Nível Transcender alcançado após conclusão de todo o currículo base.</div>
         </div>
       </div>
       <div class="timeline-item">
@@ -348,344 +362,171 @@ footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex;
   <section id="skills">
     <div class="section-label"><span class="num">03</span>Stack tecnológico</div>
     <h2 class="section-title">Tech Stack</h2>
+
     <div class="skills-wrap">
-      <span class="skill-chip highlight">C</span>
-      <span class="skill-chip highlight">C++</span>
-      <span class="skill-chip">Python</span>
-      <span class="skill-chip">TypeScript</span>
-      <span class="skill-chip">JavaScript</span>
-      <span class="skill-chip">SQL</span>
-      <span class="skill-chip highlight">Linux</span>
-      <span class="skill-chip highlight">Docker</span>
-      <span class="skill-chip">Docker Compose</span>
-      <span class="skill-chip">Git &amp; GitHub</span>
-      <span class="skill-chip">GDB · Valgrind</span>
-      <span class="skill-chip highlight">Algorithms</span>
-      <span class="skill-chip">Data Structures</span>
-      <span class="skill-chip">Threads &amp; Mutex</span>
-      <span class="skill-chip">Sockets · TCP/IP</span>
-      <span class="skill-chip">DevOps</span>
-      <span class="skill-chip">Shell Scripting</span>
-      <span class="skill-chip">IPC · UNIX Signals</span>
-      <span class="skill-chip gold-chip">Power BI</span>
-      <span class="skill-chip">Excel avançado</span>
-      <span class="skill-chip">Data Analysis</span>
-      <span class="skill-chip">Bash Automation</span>
+      <span class="skill-chip highlight">SQL</span>
+      <span class="skill-chip highlight">Python</span>
+      <span class="skill-chip highlight">Power BI</span>
+      <span class="skill-chip gold-chip">Excel avançado</span>
+      <span class="skill-chip">Pandas</span>
+      <span class="skill-chip">Window Functions</span>
+      <span class="skill-chip">Cohort Analysis</span>
+      <span class="skill-chip">RFM Analysis</span>
+      <span class="skill-chip">Modelação de Dados</span>
+      <span class="skill-chip">Dashboards</span>
     </div>
   </section>
 
-<!-- PROJECTS -->
-<section id="projetos">
-  <div class="projects-section-header">
-    <div>
-      <div class="section-label"><span class="num">04</span>Portfolio</div>
-      <h2 class="section-title" style="margin-bottom:0;">Projetos</h2>
-    </div>
-    <div class="projects-count">16</div>
-  </div>
-
-  <div class="projects-grid">
-
-    <!-- LIBFT -->
-    <div class="project-card">
-      <div class="project-num">01</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">Libft</div>
-      <p class="project-desc">
-        Biblioteca personalizada em C com reimplementação de funções da libc, gestão de memória e listas ligadas.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">C</span>
-          <span class="project-tag">Libc</span>
-          <span class="project-tag">Valgrind</span>
-        </div>
-        <span class="project-status status-done">Concluído</span>
+  <!-- DATA PROJECTS -->
+  <section id="dados">
+    <div class="projects-section-header">
+      <div>
+        <div class="section-label purple"><span class="num">04</span>Portfolio de Dados</div>
+        <h2 class="section-title" style="margin-bottom:0;">Projetos de Dados</h2>
       </div>
-      <a href="https://github.com/Victorbagas" target="_blank" class="btn btn-ghost" style="margin-top:1rem;">
-        Ver Projeto
-      </a>
+      <div class="projects-count">6</div>
     </div>
+    <p class="section-sub">Projectos ponta-a-ponta com datasets sintéticos, SQL analítico, EDA em Python e dashboards em Power BI — cada um cobrindo um domínio de negócio diferente.</p>
 
-    <!-- FT_PRINTF -->
-    <div class="project-card">
-      <div class="project-num">02</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">ft_printf</div>
-      <p class="project-desc">
-        Reimplementação do printf() com parsing de formatos e argumentos variádicos.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">C</span>
-          <span class="project-tag">Variadic</span>
-          <span class="project-tag">I/O</span>
+    <div class="projects-grid">
+
+      <!-- E-COMMERCE ANALYTICS -->
+      <div class="project-card data-card">
+        <div class="project-num">01</div>
+        <div class="project-label label-data">Data & BI</div>
+        <div class="project-title">E-commerce Analytics</div>
+        <p class="project-desc">
+          Análise de vendas de e-commerce com dataset sintético: SQL com window functions, segmentação RFM e cohort analysis, EDA em Python e dashboard em Power BI.
+        </p>
+        <div class="project-footer">
+          <div class="project-tags">
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">RFM</span>
+            <span class="project-tag">Power BI</span>
+          </div>
+          <span class="project-status status-done">Concluído</span>
         </div>
-        <span class="project-status status-done">Concluído</span>
       </div>
-    </div>
 
-    <!-- GNL -->
-    <div class="project-card">
-      <div class="project-num">03</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">get_next_line</div>
-      <p class="project-desc">
-        Leitura eficiente linha por linha em ficheiros utilizando buffers dinâmicos.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">C</span>
-          <span class="project-tag">Buffer</span>
-          <span class="project-tag">FD</span>
+      <!-- FINANCIAL PERFORMANCE -->
+      <div class="project-card data-card">
+        <div class="project-num">02</div>
+        <div class="project-label label-data">Data & BI</div>
+        <div class="project-title">Financial Performance</div>
+        <p class="project-desc">
+          Análise de desempenho financeiro: queries SQL para receitas, custos e margens, processamento em Python e dashboard executivo em Power BI.
+        </p>
+        <div class="project-footer">
+          <div class="project-tags">
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Power BI</span>
+          </div>
+          <span class="project-status status-progress">Em construção</span>
         </div>
-        <span class="project-status status-done">Concluído</span>
       </div>
-    </div>
 
-    <!-- BORN2BEROOT -->
-    <div class="project-card">
-      <div class="project-num">04</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">Born2beroot</div>
-      <p class="project-desc">
-        Configuração completa de servidor Linux com SSH, UFW, sudo e monitoramento automático.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Linux</span>
-          <span class="project-tag">VM</span>
-          <span class="project-tag">Sysadmin</span>
+      <!-- CUSTOMER CHURN -->
+      <div class="project-card data-card">
+        <div class="project-num">03</div>
+        <div class="project-label label-data">Data & BI</div>
+        <div class="project-title">Customer Churn</div>
+        <p class="project-desc">
+          Identificação de padrões de abandono de clientes com Python e SQL, análise exploratória de factores de risco e visualização em Power BI.
+        </p>
+        <div class="project-footer">
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Power BI</span>
+          </div>
+          <span class="project-status status-progress">Em construção</span>
         </div>
-        <span class="project-status status-done">Concluído</span>
       </div>
-    </div>
 
-    <!-- PUSH_SWAP -->
-    <div class="project-card">
-      <div class="project-num">05</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">Push Swap</div>
-      <p class="project-desc">
-        Algoritmo avançado de ordenação usando duas pilhas e minimização de operações.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Algorithms</span>
-          <span class="project-tag">Stacks</span>
-          <span class="project-tag">C</span>
+      <!-- LOGISTICS & DELIVERY -->
+      <div class="project-card data-card">
+        <div class="project-num">04</div>
+        <div class="project-label label-data">Data & BI</div>
+        <div class="project-title">Logistics & Delivery</div>
+        <p class="project-desc">
+          Análise de operações logísticas e prazos de entrega: SQL para métricas operacionais, Python para tratamento de dados e Power BI para monitoramento.
+        </p>
+        <div class="project-footer">
+          <div class="project-tags">
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Power BI</span>
+          </div>
+          <span class="project-status status-progress">Em construção</span>
         </div>
-        <span class="project-status status-done">Concluído</span>
       </div>
-    </div>
 
-    <!-- MINITALK -->
-    <div class="project-card">
-      <div class="project-num">06</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">Minitalk</div>
-      <p class="project-desc">
-        Comunicação entre processos usando sinais UNIX bit-a-bit com confirmação de entrega.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">IPC</span>
-          <span class="project-tag">Signals</span>
-          <span class="project-tag">UNIX</span>
+      <!-- HEALTH OPERATIONS -->
+      <div class="project-card data-card">
+        <div class="project-num">05</div>
+        <div class="project-label label-data">Data & BI</div>
+        <div class="project-title">Health Operations</div>
+        <p class="project-desc">
+          Análise de operações de saúde: consultas SQL sobre fluxo de pacientes e recursos, tratamento de dados em Python e dashboard operacional em Power BI.
+        </p>
+        <div class="project-footer">
+          <div class="project-tags">
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Power BI</span>
+          </div>
+          <span class="project-status status-progress">Em construção</span>
         </div>
-        <span class="project-status status-done">Concluído</span>
       </div>
-    </div>
 
-    <!-- PHILOSOPHERS -->
-    <div class="project-card">
-      <div class="project-num">07</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">Philosophers</div>
-      <p class="project-desc">
-        Concorrência e sincronização com threads POSIX e mutexes para evitar deadlocks.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Threads</span>
-          <span class="project-tag">Mutex</span>
-          <span class="project-tag">C</span>
+      <!-- EXECUTIVE BI -->
+      <div class="project-card data-card">
+        <div class="project-num">06</div>
+        <div class="project-label label-data">Data & BI</div>
+        <div class="project-title">Executive Business Intelligence</div>
+        <p class="project-desc">
+          Dashboard executivo consolidando múltiplas áreas de negócio: queries SQL agregadas, tratamento em Python e visualização de KPIs em Power BI.
+        </p>
+        <div class="project-footer">
+          <div class="project-tags">
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Power BI</span>
+          </div>
+          <span class="project-status status-progress">Em construção</span>
         </div>
-        <span class="project-status status-done">Concluído</span>
       </div>
+
     </div>
 
-    <!-- MINI RT -->
-    <div class="project-card">
-      <div class="project-num">08</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">miniRT</div>
-      <p class="project-desc">
-        Motor gráfico Ray Tracing em C com iluminação, sombras e renderização 3D.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">3D</span>
-          <span class="project-tag">Graphics</span>
-          <span class="project-tag">Math</span>
+    <!-- Existing BI project kept as bonus proof point -->
+    <div class="projects-grid" style="margin-top:1px;">
+      <div class="project-card data-card">
+        <div class="project-num">+</div>
+        <div class="project-label label-data">Data & BI · Anterior</div>
+        <div class="project-title">Mapazzz</div>
+        <p class="project-desc">
+          Plataforma de análise e prevenção da malária usando Power BI, pesquisa e dados — primeiro projecto de dados aplicado a um problema real.
+        </p>
+        <div class="project-footer">
+          <div class="project-tags">
+            <span class="project-tag">Power BI</span>
+            <span class="project-tag">Research</span>
+            <span class="project-tag">UX</span>
+          </div>
+          <span class="project-status status-done">Concluído</span>
         </div>
-        <span class="project-status status-done">Concluído</span>
       </div>
     </div>
-
-    <!-- MINISHELL -->
-    <div class="project-card">
-      <div class="project-num">09</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">Minishell</div>
-      <p class="project-desc">
-        Shell UNIX completo com pipes, redireções, heredoc e execução de processos.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Shell</span>
-          <span class="project-tag">Unix</span>
-          <span class="project-tag">Processes</span>
-        </div>
-        <span class="project-status status-done">Concluído</span>
-      </div>
-    </div>
-
-    <!-- INCEPTION -->
-    <div class="project-card">
-      <div class="project-num">10</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">Inception</div>
-      <p class="project-desc">
-        Infraestrutura Docker Compose com NGINX, WordPress, MariaDB e TLS.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Docker</span>
-          <span class="project-tag">DevOps</span>
-          <span class="project-tag">Linux</span>
-        </div>
-        <span class="project-status status-done">Concluído</span>
-      </div>
-    </div>
-
-    <!-- IRC -->
-    <div class="project-card">
-      <div class="project-num">11</div>
-      <div class="project-label label-42">42 Core</div>
-      <div class="project-title">IRC Server</div>
-      <p class="project-desc">
-        Servidor IRC em C++ usando sockets TCP não bloqueantes e múltiplos clientes.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">C++</span>
-          <span class="project-tag">Sockets</span>
-          <span class="project-tag">TCP/IP</span>
-        </div>
-        <span class="project-status status-done">Concluído</span>
-      </div>
-    </div>
-
-    <!-- NETPULSE -->
-    <div class="project-card featured">
-      <div class="project-num">12</div>
-      <div class="project-label label-bonus">★ Networking</div>
-      <div class="project-title">NetPulse</div>
-      <p class="project-desc">
-        Analisador de rede em tempo real em C++ com captura de pacotes e dashboard TUI.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">C++</span>
-          <span class="project-tag">libpcap</span>
-          <span class="project-tag">TUI</span>
-        </div>
-        <span class="project-status status-bonus">★ Destaque</span>
-      </div>
-    </div>
-
-    <!-- MAPAZZZ -->
-    <div class="project-card">
-      <div class="project-num">13</div>
-      <div class="project-label label-data">Data & BI</div>
-      <div class="project-title">Mapazzz</div>
-      <p class="project-desc">
-        Plataforma de análise e prevenção da malária usando Power BI, pesquisa e dados.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Power BI</span>
-          <span class="project-tag">Research</span>
-          <span class="project-tag">UX</span>
-        </div>
-        <span class="project-status status-done">Concluído</span>
-      </div>
-    </div>
-
-    <!-- SENTINEL -->
-    <div class="project-card featured">
-      <div class="project-num">14</div>
-      <div class="project-label label-bonus">★ Backend</div>
-      <div class="project-title">Sentinel</div>
-      <p class="project-desc">
-        Plataforma moderna de monitoramento de infraestrutura e detecção de ameaças em tempo real.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">FastAPI</span>
-          <span class="project-tag">Docker</span>
-          <span class="project-tag">PostgreSQL</span>
-        </div>
-        <span class="project-status status-bonus">★ Infra</span>
-      </div>
-    </div>
-
-    <!-- DOCKWATCH -->
-    <div class="project-card">
-      <div class="project-num">15</div>
-      <div class="project-label label-bonus">★ DevOps</div>
-      <div class="project-title">DockWatch</div>
-      <p class="project-desc">
-        Plataforma de monitoramento Docker com métricas, logs e analytics de containers.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">Docker</span>
-          <span class="project-tag">Redis</span>
-          <span class="project-tag">Linux</span>
-        </div>
-        <span class="project-status status-bonus">★ Monitoring</span>
-      </div>
-    </div>
-
-    <!-- NETPULSE API -->
-    <div class="project-card featured">
-      <div class="project-num">16</div>
-      <div class="project-label label-bonus">★ Real-Time</div>
-      <div class="project-title">NetPulseAPI</div>
-      <p class="project-desc">
-        Backend de análise de tráfego TCP/IP com métricas em tempo real via WebSockets.
-      </p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="project-tag">FastAPI</span>
-          <span class="project-tag">Sockets</span>
-          <span class="project-tag">WebSockets</span>
-        </div>
-        <span class="project-status status-bonus">★ Backend</span>
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- CONTACT -->
   <section id="contacto">
     <div class="section-label"><span class="num">05</span>Contacto</div>
     <div class="contact-block">
-      <h2 class="section-title" style="margin-bottom:0.5rem;">Vamos construir<br>algo incrível.</h2>
-      <p style="color:var(--muted);font-size:15px;max-width:480px;">Disponível para oportunidades profissionais, trabalho remoto e colaboração em projectos de engenharia de software.</p>
+      <h2 class="section-title" style="margin-bottom:0.5rem;">Vamos construir<br>algo com dados.</h2>
+      <p style="color:var(--muted);font-size:15px;max-width:480px;">Disponível para oportunidades em Análise de Dados, BI e Data Engineering, trabalho remoto e colaboração em projectos.</p>
       <div class="contact-available">
         <span class="contact-available-dot"></span>
         <span class="contact-available-text">Disponível para trabalho imediato — respondo em menos de 24h</span>
@@ -715,7 +556,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex;
 
 <footer>
   <div class="footer-logo">AVF</div>
-  <div class="footer-copy">© 2025 · António Victor Fernando · 42 Luanda Transcender · Backend Developer</div>
+  <div class="footer-copy">© 2025 · António Victor Fernando · Analista de Dados · 42 Luanda Transcender</div>
 </footer>
 
 </body>
